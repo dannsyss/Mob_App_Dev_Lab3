@@ -1,27 +1,44 @@
 package com.example.mob_app_dev_lab3
 
-import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+import android.os.Bundle
+import android.widget.Toast
 import com.example.mob_app_dev_lab3.databinding.ActivityMainBinding
+
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityMainBinding
+
+    private lateinit var binding : ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityMainBinding.inflate(layoutInflater)
-        binding.imageView.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.cat_1))
-        val v:View= binding.root
-        binding.imageButton.setOnClickListener{
-            var rnd:Int=(1..3).random()
-            var str:String="cat_"+rnd.toString()
+        binding = ActivityMainBinding.inflate(layoutInflater)
 
-            var resId:Int = getResources().getIdentifier(str, "drawable", getPackageName());
+        binding.button1.setOnClickListener{
+            Toast.makeText(applicationContext,"Нажата кнопка 1.",Toast.LENGTH_SHORT).show()
+            }
 
-            binding.imageView.setImageDrawable(ContextCompat.getDrawable(this,resId))
+        binding.button2.setOnClickListener{
+            Toast.makeText(applicationContext,"Нажата кнопка 2.",Toast.LENGTH_SHORT).show()
         }
 
-        setContentView(v)
+        binding.button3.setOnClickListener{
+            Toast.makeText(applicationContext,"Нажата кнопка 3.",Toast.LENGTH_SHORT).show()
+        }
 
-    }
-}
+        binding.button4.setOnClickListener{
+            Toast.makeText(applicationContext,"Нажата кнопка 4.",Toast.LENGTH_SHORT).show()
+        }
+
+        binding.button5.setOnClickListener{
+            Toast.makeText(applicationContext,"Нажата кнопка 5.",Toast.LENGTH_SHORT).show()
+        }
+
+        binding.button6.setOnClickListener{
+            Toast.makeText(applicationContext,"Нажата кнопка 6.",Toast.LENGTH_SHORT).show()
+        }
+
+        val view = binding.root
+        setContentView(view)
+        }
+ }
